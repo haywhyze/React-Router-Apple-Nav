@@ -33,5 +33,17 @@ export default () => (
       </NavLink>
     )}
   </StyledNav>
+    {navData.map(data => 
+      <Route 
+        key={data.id} 
+        exact 
+        path={`/${data.title}`} 
+        render={(props) => 
+          <SubNav 
+            {...props} 
+            data={data} 
+          />
+        } 
+      />)}
   </>
 );
